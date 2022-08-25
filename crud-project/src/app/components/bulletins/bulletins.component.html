@@ -1,0 +1,7 @@
+<div class="bulletins">
+  <div class="bulletin" *ngFor="let bulletin of bulletins; let i = index">
+    <div class="bulletin-title">{{ i }}</div>
+    <div class="content">{{ bulletin.content }}</div>
+    <button class="delete">Delete</button>
+  </div>
+</div>
