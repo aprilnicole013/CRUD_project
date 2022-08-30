@@ -24,4 +24,8 @@ export class BulletinsComponent implements OnInit {
     ]
   }
 
+  deleteBulletin(id:number) {
+    this.bulletins = this.bulletins.filter((v, i) => i !== id);
+  }
+
 }

@@ -1,7 +1,8 @@
 <div class="bulletins">
-  <div class="bulletin" *ngFor="let bulletin of bulletins; let i = index">
-    <div class="bulletin-title">{{ i }}</div>
+  <div class="bulletin" *ngFor="let bulletin of bulletins; let i = index;" class="bulletin {{ (bulletin.completed ? 'done' : '') }}">
+    <div class="id">{{ i }}</div>
     <div class="content">{{ bulletin.content }}</div>
-    <button class="delete">Delete</button>
+    <button class="edit">Edit</button>
+    <button class="delete" (click)="deleteBulletin(i)">Delete</button>
   </div>
 </div>
