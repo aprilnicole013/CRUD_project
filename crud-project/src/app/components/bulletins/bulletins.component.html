@@ -1,4 +1,19 @@
 <div class="bulletins">
+  <form (submit)="addBulletin()">
+    <input
+      type="text"
+      name="inputBulletin"
+      placeholder="Post a message here..."
+      class="bulletin-input"
+      [(ngModel)]="inputBulletin"
+    />
+    <input
+      type="submit"
+      value="Post a bulletin"
+      class="bulletin-submit"
+      ng-required="true"
+    />
+  </form>
   <div class="bulletin" *ngFor="let bulletin of bulletins; let i = index;" class="bulletin {{ (bulletin.completed ? 'done' : '') }}">
     <div class="id">{{ i }}</div>
     <div class="content">{{ bulletin.content }}</div>

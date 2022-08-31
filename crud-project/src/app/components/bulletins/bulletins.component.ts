@@ -9,6 +9,8 @@ import { Bulletin } from 'src/app/models/Bulletin';
 export class BulletinsComponent implements OnInit {
 
   bulletins:Bulletin[]
+
+  inputBulletin:string = "";
   constructor() { }
 
   ngOnInit(): void {
@@ -26,6 +28,15 @@ export class BulletinsComponent implements OnInit {
 
   deleteBulletin(id:number) {
     this.bulletins = this.bulletins.filter((v, i) => i !== id);
+  }
+
+  addBulletin () {
+    this.bulletins.push({
+      content: this.inputBulletin,
+      completed: false
+    });
+
+    this.inputBulletin = ''
   }
 
 }
