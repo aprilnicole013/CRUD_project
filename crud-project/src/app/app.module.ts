@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { BulletinsComponent } from './components/bulletins/bulletins.component';
+import { StoreModule } from '@ngrx/store';
+import { BulletinReducer } from './store/reducers/bulletin.reducer';
 
 @NgModule({
   declarations: [
@@ -12,7 +14,8 @@ import { BulletinsComponent } from './components/bulletins/bulletins.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

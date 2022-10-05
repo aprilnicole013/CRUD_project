@@ -2,6 +2,13 @@
   <form (submit)="addBulletin()">
     <input
       type="text"
+      name="inputTitle"
+      placeholder="Post a title"
+      class="bulletin-title"
+      [(ngModel)]="inputTitle"
+    />
+    <input
+      type="text"
       name="inputBulletin"
       placeholder="Post a message here..."
       class="bulletin-input"
@@ -15,8 +22,9 @@
     />
   </form>
   <div class="bulletin" *ngFor="let bulletin of bulletins; let i = index;" class="bulletin {{ (bulletin.completed ? 'done' : '') }}">
-    <div class="id">{{ i }}</div>
+    <div class="id">{{ bulletin.title }}</div>
     <div class="content">{{ bulletin.content }}</div>
+    <button class="urgency">{{ urgencyVal }}</button>
     <button class="edit">Edit</button>
     <button class="delete" (click)="deleteBulletin(i)">Delete</button>
   </div>

@@ -15,14 +15,28 @@
 
 .bulletin .id {
 	flex: 1 1 50px;
+  padding-right: 10px;
 }
 
 .bulletin .content {
-	flex: 1 1 100%;
+	color: green;
+  flex: 1 1 100%;
 }
 
 .bulletin.done .content {
 	text-decoration: line-through;
+}
+
+.bulletin-title {
+  display: block;
+	width: 100%;
+	padding: 10px 15px;
+	appearance: none;
+	border: none;
+	background-color: #F3F3F3;
+	margin-top: 15px;
+	font-size: 20px;
+	outline: none;
 }
 
 .bulletin-input {
@@ -54,3 +68,4 @@
 	font-size: 18px;
 	font-weight: 700;
 }
+
