@@ -8,6 +8,7 @@ const initialState: Array<Bulletin> = [
     content: "This is a bulletin post",
     completed: false,
     isUrgent: true,
+    id: 1
   },
 ];
 

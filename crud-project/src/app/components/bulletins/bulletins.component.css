@@ -19,7 +19,6 @@
 }
 
 .bulletin .content {
-	color: green;
   flex: 1 1 100%;
 }
 
@@ -69,3 +68,14 @@
 	font-weight: 700;
 }
 
+.bulletin.urgent .content{
+  color: red;
+}
+
+.bulletin.not-urgent .content{
+  color: green;
+}
+
+.urgency-button {
+
+}

@@ -3,4 +3,5 @@ export class Bulletin {
   content: string;
   completed: boolean;
   isUrgent: boolean;
+  id: number;
 }

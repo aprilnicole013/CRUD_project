@@ -14,7 +14,7 @@ export class BulletinsComponent implements OnInit {
 
   inputBulletin:string = "";
 
-  urgencyVal = "Set to Urgent"
+  bulletinId:number;
 
   constructor() { }
 
@@ -24,18 +24,21 @@ export class BulletinsComponent implements OnInit {
         title: "Title 2 ",
         content: 'First bulletin',
         completed: false,
-        isUrgent: false
+        isUrgent: false,
+        id: 2
       },
       {
         title: "Title 1",
         content: 'Second bulletin',
         completed: true,
-        isUrgent: false
+        isUrgent: false,
+        id: 1
       }
     ]
   }
 
   deleteBulletin(id:number) {
+    //Filtering items not matching given id. Giving back all bulletins excpet for one that is being deleted
     this.bulletins = this.bulletins.filter((v, i) => i !== id);
   }
 
@@ -45,7 +48,8 @@ export class BulletinsComponent implements OnInit {
         title: this.inputTitle,
         content: this.inputBulletin,
         completed: false,
-        isUrgent: false
+        isUrgent: false,
+        id: this.bulletinId
       });
 
       this.inputBulletin = '';
@@ -53,12 +57,9 @@ export class BulletinsComponent implements OnInit {
     }
     }
 
-//  toggleUrgency () {
-//   if(this.bulletins){
-//     this.bulletins.push({
-//       isUrgent: true
-//     });
-
-//  }
+ toggleUrgency (id:number) {
+   this.bulletins[id].isUrgent = !this.bulletins[id].isUrgent;
+   console.log(this.bulletins[id].isUrgent)
+ }
 
 }
