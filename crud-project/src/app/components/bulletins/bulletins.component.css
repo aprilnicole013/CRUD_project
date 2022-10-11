@@ -1,7 +1,7 @@
 .bulletin {
 	display: flex;
 	padding: 10px 15px;
-	background-color: #FFF;
+	background-color: rgb(170, 105, 105);
 	border-bottom: 1px solid #DDD;
 }
 
@@ -15,16 +15,16 @@
 
 .bulletin .id {
 	flex: 1 1 50px;
-  padding-right: 10px;
+  	padding-right: 10px;
 }
 
 .bulletin .content {
   flex: 1 1 100%;
 }
 
-.bulletin.done .content {
+/* .bulletin.done .content {
 	text-decoration: line-through;
-}
+} */
 
 .bulletin-title {
   display: block;
@@ -68,11 +68,11 @@
 	font-weight: 700;
 }
 
-.bulletin.urgent .content{
+.content.urgent {
   color: red;
 }
 
-.bulletin.not-urgent .content{
+.content.not-urgent {
   color: green;
 }
 
