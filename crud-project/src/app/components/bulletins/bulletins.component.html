@@ -21,8 +21,8 @@
       ng-required="true"
     />
   </form>
-  <div class="bulletin" *ngFor="let bulletin of bulletins; let i = index;" class="bulletin {{ (bulletin.completed ? 'done' : '') }}">
-    <div class="id">{{ bulletin.title }}</div>
+  <div class="bulletin" *ngFor="let bulletin of bulletins; let i = index;">
+    <div class="id" class="bulletin {{ (bulletin.isUrgent ? 'urgent' : 'not-urgent') }}">{{ bulletin.title }}</div>
     <div class="content" class="bulletin {{ (bulletin.isUrgent ? 'urgent' : 'not-urgent') }}">{{ bulletin.content }}</div>
     <button class="urgency-button" (click)="toggleUrgency(i)">Set Urgency</button>
     <button class="edit">Edit</button>

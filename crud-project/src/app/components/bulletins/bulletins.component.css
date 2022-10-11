@@ -1,7 +1,6 @@
 .bulletin {
 	display: flex;
 	padding: 10px 15px;
-	background-color: rgb(170, 105, 105);
 	border-bottom: 1px solid #DDD;
 }
 
@@ -15,16 +14,12 @@
 
 .bulletin .id {
 	flex: 1 1 50px;
-  	padding-right: 10px;
+  padding-right: 10px;
 }
 
 .bulletin .content {
   flex: 1 1 100%;
 }
-
-/* .bulletin.done .content {
-	text-decoration: line-through;
-} */
 
 .bulletin-title {
   display: block;
@@ -66,6 +61,15 @@
 	padding: 10px 15px;
 	font-size: 18px;
 	font-weight: 700;
+}
+
+.id.urgent {
+  color: red;
+
+}
+
+.id.not-urgent {
+  color: green;
 }
 
 .content.urgent {
