@@ -6,7 +6,6 @@ const initialState: Array<Bulletin> = [
   {
     title: "Title One",
     content: "This is a bulletin post",
-    completed: false,
     isUrgent: true,
     id: 1
   },

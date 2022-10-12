@@ -23,14 +23,12 @@ export class BulletinsComponent implements OnInit {
       {
         title: "Title 2 ",
         content: 'First bulletin',
-        completed: false,
         isUrgent: false,
         id: 2
       },
       {
         title: "Title 1",
         content: 'Second bulletin',
-        completed: true,
         isUrgent: false,
         id: 1
       }
@@ -47,7 +45,6 @@ export class BulletinsComponent implements OnInit {
       this.bulletins.push({
         title: this.inputTitle,
         content: this.inputBulletin,
-        completed: false,
         isUrgent: false,
         id: this.bulletinId
       });
