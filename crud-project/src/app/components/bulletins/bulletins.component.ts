@@ -41,7 +41,9 @@ export class BulletinsComponent implements OnInit {
   }
 
   addBulletin () {
-    //TODO: If input title or content is blank, don't add to bullentins array
+    if(!this.inputTitle || !this.inputBulletin) {
+      alert("Please complete your bulletin post")
+    }
     if(this.bulletins){
       this.bulletins.push({
         title: this.inputTitle,
