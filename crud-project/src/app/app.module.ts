@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { BulletinsComponent } from './components/bulletins/bulletins.component';
 import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { BulletinReducer } from './store/reducers/bulletin.reducer';
 
 @NgModule({
@@ -15,6 +16,8 @@ import { BulletinReducer } from './store/reducers/bulletin.reducer';
   imports: [
     BrowserModule,
     FormsModule,
+    StoreModule.forRoot({}),
+    StoreDevtoolsModule.instrument({})
 
   ],
   providers: [],
