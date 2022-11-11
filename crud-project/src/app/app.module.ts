@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { BulletinsComponent } from './components/bulletins/bulletins.component';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { BulletinReducer } from './store/reducers/bulletin.reducer';
 
 @NgModule({
   declarations: [
@@ -18,7 +17,6 @@ import { BulletinReducer } from './store/reducers/bulletin.reducer';
     FormsModule,
     StoreModule.forRoot({}),
     StoreDevtoolsModule.instrument({})
-
   ],
   providers: [],
   bootstrap: [AppComponent]
