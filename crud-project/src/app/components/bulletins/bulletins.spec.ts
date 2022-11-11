@@ -18,7 +18,7 @@ describe("Add bulletins", ()=> {
 
   it("Adds a new bulletin", () => {
     bulletinBoard.inputTitle = 'mock title';
-    bulletinBoard.inputBulletin = 'mock bulletin'
+    bulletinBoard.inputBulletin = 'mock bulletin';
     bulletinBoard.addBulletin();
     console.log('bulletin board: ', bulletinBoard);
     expect(true);
