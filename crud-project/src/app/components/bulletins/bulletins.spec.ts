@@ -1,5 +1,15 @@
+import { TestBed } from "@angular/core/testing";
+import { AppComponent } from "src/app/app.component";
 import { Bulletin } from "src/app/store/models/bulletin.model";
 import { BulletinsComponent } from "./bulletins.component";
+
+beforeEach(() => {
+    TestBed.configureTestingModule({
+        declarations: [
+          AppComponent, BulletinsComponent
+        ],
+      }).compileComponents();
+})
 
 describe("Add bulletins", ()=> {
 
