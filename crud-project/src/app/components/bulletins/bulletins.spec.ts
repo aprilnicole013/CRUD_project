@@ -15,13 +15,13 @@ describe("Add bulletins", ()=> {
 
   let bulletinBoard = new BulletinsComponent();
   bulletinBoard.ngOnInit();
+  bulletinBoard.inputTitle = 'mock title';
+  bulletinBoard.inputBulletin = 'mock bulletin';
+  bulletinBoard.addBulletin();
 
   it("Adds a new bulletin", () => {
-    bulletinBoard.inputTitle = 'mock title';
-    bulletinBoard.inputBulletin = 'mock bulletin';
-    bulletinBoard.addBulletin();
-    console.log('bulletin board: ', bulletinBoard);
-    expect(true);
+    expect(bulletinBoard.bulletins[0].title).toEqual('mock title');
+    expect(bulletinBoard.bulletins[0].content).toEqual('mock bulletin');
   });
 
 })
