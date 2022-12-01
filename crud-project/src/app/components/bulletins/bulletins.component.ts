@@ -14,25 +14,10 @@ export class BulletinsComponent implements OnInit {
 
   inputBulletin:string = "";
 
-  bulletinId:number;
-
   constructor() { }
 
   ngOnInit(): void {
-    this.bulletins = [
-      {
-        title: "Title 2 ",
-        content: 'First bulletin',
-        isUrgent: false,
-        id: 2
-      },
-      {
-        title: "Title 1",
-        content: 'Second bulletin',
-        isUrgent: false,
-        id: 1
-      }
-    ]
+    this.bulletins = [];
   }
 
   deleteBulletin(id:number) {
@@ -44,17 +29,15 @@ export class BulletinsComponent implements OnInit {
     if(!this.inputTitle || !this.inputBulletin) {
       alert("Please complete your bulletin post")
     }
-    if(this.bulletins){
       this.bulletins.push({
         title: this.inputTitle,
         content: this.inputBulletin,
         isUrgent: false,
-        id: this.bulletinId
+        id: this.bulletins[this.bulletins.length]?.id || 0 + 1
       });
 
       this.inputBulletin = '';
       this.inputTitle ='';
-    }
     }
 
  toggleUrgency (id:number) {
