@@ -26,10 +26,18 @@ describe("Add bulletins", ()=> {
 
 })
 
-describe("Delete bulletins", ()=> {
-  //data here
+describe("Delete bulletin", ()=> {
+  let bulletinBoard = new BulletinsComponent();
+  bulletinBoard.ngOnInit();
+  bulletinBoard.inputTitle = 'mock title';
+  bulletinBoard.inputBulletin = 'mock bulletin';
+  bulletinBoard.addBulletin();
+  console.log("First: ", bulletinBoard.bulletins);
+  bulletinBoard.deleteBulletin(0);
+  console.log("Second: ", bulletinBoard.bulletins);
+  console.log(bulletinBoard.bulletins.length);
   it("Deletes a bulletin when deleteBulletin is invoked", () => {
-    //Expectation here
+    expect(bulletinBoard.bulletins.length).toBe(0);
   })
 
 })
