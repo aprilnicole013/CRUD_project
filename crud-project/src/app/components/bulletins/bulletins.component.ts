@@ -14,7 +14,7 @@ export class BulletinsComponent implements OnInit {
 
   inputBulletin:string = "";
 
-  constructor() { }
+  setUrgency:boolean = false;
 
   ngOnInit(): void {
     this.bulletins = [];
@@ -22,17 +22,18 @@ export class BulletinsComponent implements OnInit {
 
   deleteBulletin(id:number) {
     //Filtering items not matching given id. Giving back all bulletins excpet for one that is being deleted
-    this.bulletins = this.bulletins.filter((v, i) => i !== id);
+    this.bulletins = this.bulletins.filter((v, i) => i + 1 !== id);
   }
 
   addBulletin () {
     if(!this.inputTitle || !this.inputBulletin) {
       alert("Please complete your bulletin post")
+      return
     }
       this.bulletins.push({
         title: this.inputTitle,
         content: this.inputBulletin,
-        isUrgent: false,
+        isUrgent: this.setUrgency,
         id: this.bulletins[this.bulletins.length]?.id || 0 + 1
       });
 

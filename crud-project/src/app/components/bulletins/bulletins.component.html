@@ -24,7 +24,7 @@
   <div class="bulletin" *ngFor="let bulletin of bulletins; let i = index;">
     <div class="id" class="bulletin {{ (bulletin.isUrgent ? 'urgent' : 'not-urgent') }}">{{ bulletin.title }}</div>
     <div class="content" class="bulletin {{ (bulletin.isUrgent ? 'urgent' : 'not-urgent') }}">{{ bulletin.content }}</div>
-    <button class="urgency-button" (click)="toggleUrgency(i)">Set Urgency</button>
+    <button class="urgency-button" (click)="toggleUrgency(i)" [(ngModel)]="setUrgency">Set Urgency</button>
     <button class="edit">Edit</button>
     <button class="delete" (click)="deleteBulletin(i)">Delete</button>
   </div>
