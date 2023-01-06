@@ -30,11 +30,12 @@ export class BulletinsComponent implements OnInit {
       alert("Please complete your bulletin post")
       return
     }
+
       this.bulletins.push({
         title: this.inputTitle,
         content: this.inputBulletin,
         isUrgent: this.setUrgency,
-        id: this.bulletins[this.bulletins.length]?.id || 0 + 1
+        id: this.bulletins.length + 1
       });
 
       this.inputBulletin = '';
@@ -42,7 +43,7 @@ export class BulletinsComponent implements OnInit {
     }
 
  toggleUrgency (id:number) {
-   this.bulletins[id].isUrgent = !this.bulletins[id].isUrgent;
+   this.bulletins[id - 1].isUrgent = !this.bulletins[id - 1].isUrgent;
  }
 
 }

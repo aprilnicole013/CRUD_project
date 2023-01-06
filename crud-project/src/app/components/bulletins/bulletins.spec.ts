@@ -39,32 +39,30 @@ describe("Delete bulletin", ()=> {
 
 })
 
-describe("Set urgency", ()=> {
+describe("Set urgency to true", ()=> {
   let bulletinBoard = new BulletinsComponent();
   bulletinBoard.ngOnInit();
   bulletinBoard.inputTitle = 'Title 3';
   bulletinBoard.inputBulletin = 'Not urgent bulletin';
   bulletinBoard.setUrgency = false;
   bulletinBoard.addBulletin();
-
-  bulletinBoard.inputTitle = 'Title 4';
-  bulletinBoard.inputBulletin = 'Urgent bulletin';
-  bulletinBoard.setUrgency = true;
-  bulletinBoard.addBulletin();
-
-  console.log("bulletins: " + JSON.stringify(bulletinBoard.bulletins[0]));
-  console.log("bulletins: " + JSON.stringify(bulletinBoard.bulletins[1]));
-
   it("Changes non urgent bulletin to urgent when isUrgent is invoked", () => {
-    bulletinBoard.toggleUrgency(0);
+    bulletinBoard.toggleUrgency(1);
     expect(bulletinBoard.bulletins[0].isUrgent).toBe(true);
-    // console.log("bulletins: " + JSON.stringify(bulletinBoard.bulletins[0]));
   })
 
-  // it("Changes urgent bulletin to non urgent when isUrgent is invoked", () => {
-  //   bulletinBoard.toggleUrgency(1);
-  //   expect(bulletinBoard.bulletins[0].isUrgent).toBe(false);
-  // })
+})
+  describe("Set urgency to false", ()=> {
+    let bulletinBoard = new BulletinsComponent();
+    bulletinBoard.ngOnInit();
+    bulletinBoard.inputTitle = 'Title 4';
+    bulletinBoard.inputBulletin = 'Urgent bulletin';
+    bulletinBoard.setUrgency = true;
+    bulletinBoard.addBulletin();
+    it("Changes urgent bulletin to non urgent when isUrgent is invoked", () => {
+      bulletinBoard.toggleUrgency(1);
+      expect(bulletinBoard.bulletins[0].isUrgent).toBe(false);
+    })
 
   // .id.urgent {
   //   color: red;
@@ -82,5 +80,25 @@ describe("Set urgency", ()=> {
   // .content.not-urgent {
   //   color: green;
   // }
+
+describe("Set bulletin id", ()=> {
+  let bulletinBoard = new BulletinsComponent();
+  bulletinBoard.ngOnInit();
+  bulletinBoard.inputTitle = 'Title 3';
+  bulletinBoard.inputBulletin = 'Not urgent bulletin';
+  bulletinBoard.addBulletin();
+
+  bulletinBoard.inputTitle = 'Title 4';
+  bulletinBoard.inputBulletin = 'Urgent bulletin';
+  bulletinBoard.addBulletin();
+
+  it("Adding a bulletin increments the id by 1", () => {
+    expect(bulletinBoard.bulletins[0].id).toBe(1);
+  })
+
+  it("Adding a bulletin increments the id by 1", () => {
+    expect(bulletinBoard.bulletins[1].id).toBe(2);
+  })
+})
 
 })
